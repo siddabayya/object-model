@@ -46,3 +46,21 @@ class Duck extends Bird implements Singable, Flyable, Walkble {
 class Chicken extends Bird implements Singable, Walkble {
 
 }
+
+class Rooster extends Animal implements Singable, Walkble {
+	public Singable singable;
+
+	public void setSingable(Singable singable) {
+		this.singable = singable;
+	}
+
+	@Override
+	public void sing() {
+		this.singable.sing();
+
+	}
+}
+
+class Parrot extends Bird implements Singable, Flyable, Walkble {
+
+}
