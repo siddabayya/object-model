@@ -23,6 +23,9 @@ public class Solution {
 		
 		// 4. Can you model a parrot? We are specifically interested in three parrots,
 		parrotsBehavior();
+		
+		// B. Model fish as well as other swimming animals
+		fishBehaviors();
 
 	}
 
@@ -88,6 +91,33 @@ public class Solution {
 		Bird parrotWithDuck = new Parrot();
 		parrotWithDuck.setSingable(new CluckAction());
 		parrotWithDuck.sing();
+	}
+	
+	public static void fishBehaviors() {
+		
+		System.out.println("--------- Shark ---------");
+		Fish shark = new Shark();
+		// shark.sing(); // No sing
+		// shark.walk(); // No walk
+		shark.swim();
+		// a. Sharks are large and grey
+		// d. Sharks eat other fish
+		shark.genre();
+
+		System.out.println("--------- Clownfish ---------");
+		Fish clownfish = new Clownfish();
+		// clownfish.sing(); // No sing
+		// clownfish.walk(); // No walk
+		clownfish.swim();
+		// c. Clownfish make jokes
+		// b. Clownfish are small and colorful (orange)
+		clownfish.genre();
+		
+		System.out.println("--------- Dolphin ---------");
+		// 3. Dolphins are not exactly fish, yet, they are good swimmers
+		Dolphin dolphin = new Dolphin();
+		dolphin.setSwimmable(new SwimAction());
+		dolphin.swim();
 	}
 
 }
