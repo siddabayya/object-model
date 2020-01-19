@@ -1,10 +1,13 @@
 package com.codility;
 
+import java.util.Locale;
+
 import com.codility.flyable.FlyAction;
 import com.codility.flyable.Flyable;
 import com.codility.flyable.NoFlyAction;
 import com.codility.singable.CluckAction;
 import com.codility.singable.DoodleAction;
+import com.codility.singable.IntlRoosterAction;
 import com.codility.singable.MeowAction;
 import com.codility.singable.QuackAction;
 import com.codility.singable.Singable;
@@ -41,6 +44,11 @@ public class Solution {
 				new Shark(), new Clownfish(), new Dolphin(), new Butterfly() };
 		
 		countAnimalByBehaviors(animals);
+		
+		// BONUS - Can you add a second language (Internalization)
+		roosterWithMultilingual(new Locale("en", "US")); // En US
+		roosterWithMultilingual(new Locale("da", "DK")); // Danish
+		roosterWithMultilingual(new Locale("fr", "FR")); // French
 
 	}
 
@@ -160,6 +168,8 @@ public class Solution {
 
 	public static void countAnimalByBehaviors(Animal[] animals) {
 
+		System.out.println("---------  Counting animals ---------");
+		
 		int flyCount = 0;
 		int walkCount = 0;
 		int swimCount = 0;
@@ -183,5 +193,16 @@ public class Solution {
 		}
 		
 		System.out.println("flyCount= "+ flyCount + " walkCount= "+ walkCount + " swimCount= "+ swimCount + " singCount= "+ singCount );
+	}
+	
+	public static void roosterWithMultilingual(Locale aLocale) {
+		
+		System.out.println("---------  BONUS: Second Language " +aLocale+ " ---------");
+ 		IntlRoosterAction intlSingAction = new IntlRoosterAction();
+		intlSingAction.setaLocale(aLocale);
+		
+		Rooster rooster = new Rooster();
+		rooster.setSingable(intlSingAction);
+		rooster.sing();  
 	}
 }
