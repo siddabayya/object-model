@@ -3,6 +3,7 @@ package com.codility;
 import com.codility.flyable.FlyAction;
 import com.codility.flyable.NoFlyAction;
 import com.codility.singable.CluckAction;
+import com.codility.singable.DoodleAction;
 import com.codility.singable.QuackAction;
 import com.codility.swimmable.SwimAction;
 
@@ -14,6 +15,9 @@ public class Solution {
 
 		// 2) we have 2 special kinds of birds: the Duck and the Chicken.
 		birdBehaviors();
+		
+		// 3) Now how would you model a rooster?
+		roosterBehavior();
 
 	}
 
@@ -40,6 +44,17 @@ public class Solution {
 		chicken.walk();
 		chicken.fly(); // No Fly
 		chicken.sing();
+	}
+
+	public static void roosterBehavior() {
+		
+		// a. A rooster says: "“Cock-a-doodle-doo"
+		// b. How is the rooster related to the chicken?
+		// c. Can you think of other ways to model a rooster without using inheritance?
+		System.out.println("--------- Rooster ---------");
+		Rooster rooster = new Rooster();
+		rooster.setSingable(new DoodleAction());
+		rooster.sing();
 	}
 
 }

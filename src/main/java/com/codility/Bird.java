@@ -61,6 +61,3 @@ class Rooster extends Animal implements Singable, Walkble {
 	}
 }
 
-class Parrot extends Bird implements Singable, Flyable, Walkble {
-
-}
