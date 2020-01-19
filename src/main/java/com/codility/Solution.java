@@ -1,15 +1,19 @@
 package com.codility;
 
 import com.codility.flyable.FlyAction;
+import com.codility.flyable.Flyable;
 import com.codility.flyable.NoFlyAction;
 import com.codility.singable.CluckAction;
 import com.codility.singable.DoodleAction;
 import com.codility.singable.MeowAction;
 import com.codility.singable.QuackAction;
+import com.codility.singable.Singable;
 import com.codility.singable.WoofAction;
 import com.codility.swimmable.SwimAction;
+import com.codility.swimmable.Swimmable;
 import com.codility.walkble.NoWalkAction;
 import com.codility.walkble.WalkAction;
+import com.codility.walkble.Walkble;
 
 public class Solution {
 
@@ -31,6 +35,12 @@ public class Solution {
 		
 		// D. Model animals (Butterfly) that change their behavior over time
 		butterflyBehaviors();
+		
+		// E. Counting animals
+		Animal[] animals = new Animal[] { new Bird(), new Duck(), new Chicken(), new Rooster(), new Parrot(),
+				new Shark(), new Clownfish(), new Dolphin(), new Butterfly() };
+		
+		countAnimalByBehaviors(animals);
 
 	}
 
@@ -148,4 +158,30 @@ public class Solution {
 		butterfly.walk();
 	}
 
+	public static void countAnimalByBehaviors(Animal[] animals) {
+
+		int flyCount = 0;
+		int walkCount = 0;
+		int swimCount = 0;
+		int singCount = 0;
+
+		for (Animal animal : animals) {
+
+			if (animal instanceof Flyable) {
+				flyCount++;
+			} 
+			if(animal instanceof Walkble) {
+				walkCount++;
+			}
+			if(animal instanceof Swimmable) {
+				swimCount++;
+			}
+			if(animal instanceof Singable) {
+				singCount++;
+			}
+
+		}
+		
+		System.out.println("flyCount= "+ flyCount + " walkCount= "+ walkCount + " swimCount= "+ swimCount + " singCount= "+ singCount );
+	}
 }
