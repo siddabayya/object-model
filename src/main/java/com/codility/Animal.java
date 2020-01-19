@@ -24,11 +24,11 @@ public class Animal {
 		this.swimmable = swimmable;
 	}
 
-	public void walk() {
-		this.walkble.walk();
+	public String walk() {
+		return this.walkble.walk();
 	}
 	
-	public void swim() {
-		this.swimmable.swim();
+	public String swim() {
+		return this.swimmable.swim();
 	}
 }

@@ -30,12 +30,12 @@ class Bird extends Animal {
 		this.singable = singable;
 	}
 
-	public void sing() {
-		this.singable.sing();
+	public String sing() {
+		return this.singable.sing();
 	}
 
-	public void fly() {
-		this.flyable.fly();
+	public String fly() {
+		return this.flyable.fly();
 	}
 }
 
@@ -55,8 +55,8 @@ class Rooster extends Animal implements Singable, Walkble {
 	}
 
 	@Override
-	public void sing() {
-		this.singable.sing();
+	public String sing() {
+		return this.singable.sing();
 
 	}
 }

@@ -12,8 +12,8 @@ public class Butterfly extends Animal implements Flyable, Walkble {
 	}
 
 	@Override
-	public void fly() {
-		this.flyable.fly();
+	public String fly() {
+		return this.flyable.fly();
 
 	}
 

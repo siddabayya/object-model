@@ -3,8 +3,10 @@ package com.codility.singable;
 public class MeowAction implements Singable {
 
 	@Override
-	public void sing() {
-		System.out.println("I am sying Meow");
+	public String sing() {
+		String sing = "I am sying Meow";
+		System.out.println(sing);
+		return sing;
 
 	}
 

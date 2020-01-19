@@ -3,8 +3,10 @@ package com.codility.walkble;
 public class WalkAction implements Walkble {
 
 	@Override
-	public void walk() {
-		System.out.println("I am walking");
+	public String walk() {
+		String walk = "I am walking";
+		System.out.println(walk);
+		return walk;
 
 	}
 

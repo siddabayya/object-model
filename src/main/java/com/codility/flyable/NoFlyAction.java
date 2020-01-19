@@ -3,8 +3,9 @@ package com.codility.flyable;
 public class NoFlyAction implements Flyable {
 
 	@Override
-	public void fly() {
+	public String fly() {
 		// Can't fly
+		return "";
 
 	}
 

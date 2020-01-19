@@ -3,8 +3,10 @@ package com.codility.singable;
 public class CluckAction implements Singable {
 
 	@Override
-	public void sing() {
-		System.out.println("I am sying Cluck, cluck");
+	public String sing() {
+		String sing = "I am sying Cluck, cluck";
+		System.out.println(sing);
+		return sing;
 
 	}
 

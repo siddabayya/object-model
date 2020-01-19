@@ -3,9 +3,9 @@ package com.codility.singable;
 public class NoSingableAction implements Singable {
 
 	@Override
-	public void sing() {
+	public String sing() {
 		// Con't sing
-
+		return "";
 	}
 
 }

@@ -3,8 +3,9 @@ package com.codility.swimmable;
 public class NoSwimAction implements Swimmable {
 
 	@Override
-	public void swim() {
+	public String swim() {
 		// Con't swim
+		return "";
 
 	}
 

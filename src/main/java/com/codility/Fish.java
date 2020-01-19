@@ -5,22 +5,13 @@ import com.codility.swimmable.Swimmable;
 
 abstract class Fish extends Animal implements Swimmable {
 
-	protected Swimmable swimmable;
-
 	Fish(){
 		this.swimmable = new SwimAction();
 	}
+
 	@Override
-	public void swim() {
-		this.swimmable.swim();
-	}
-
-	public Swimmable getSwimmable() {
-		return swimmable;
-	}
-
-	public void setSwimmable(Swimmable swimmable) {
-		this.swimmable = swimmable;
+	public String walk() {
+		return ""; // Can throw exception
 	}
 
 	abstract void genre(); // Abstract method for specialization 
@@ -45,19 +36,5 @@ class Clownfish extends Fish {
 }
 
 class Dolphin extends Animal implements Swimmable {
-
-	protected Swimmable swimmable;
-
-	@Override
-	public void swim() {
-		this.swimmable.swim();
-	}
-
-	public Swimmable getSwimmable() {
-		return swimmable;
-	}
-
-	public void setSwimmable(Swimmable swimmable) {
-		this.swimmable = swimmable;
-	}
+	
 }

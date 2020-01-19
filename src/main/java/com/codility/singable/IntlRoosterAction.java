@@ -12,9 +12,12 @@ public class IntlRoosterAction implements Singable {
 	}
 
 	@Override
-	public void sing() {
+	public String sing() {
 		ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", aLocale);
+		String sing =  messages.getString("sing");
 		System.out.println("I am saying " + messages.getString("sing"));
+		return sing;
+		
 	}
 
 }
