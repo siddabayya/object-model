@@ -8,6 +8,8 @@ import com.codility.singable.MeowAction;
 import com.codility.singable.QuackAction;
 import com.codility.singable.WoofAction;
 import com.codility.swimmable.SwimAction;
+import com.codility.walkble.NoWalkAction;
+import com.codility.walkble.WalkAction;
 
 public class Solution {
 
@@ -26,6 +28,9 @@ public class Solution {
 		
 		// B. Model fish as well as other swimming animals
 		fishBehaviors();
+		
+		// D. Model animals (Butterfly) that change their behavior over time
+		butterflyBehaviors();
 
 	}
 
@@ -118,6 +123,29 @@ public class Solution {
 		Dolphin dolphin = new Dolphin();
 		dolphin.setSwimmable(new SwimAction());
 		dolphin.swim();
+	}
+	
+	public static void butterflyBehaviors() {
+		
+		System.out.println("--------- Butterfly ---------");
+		Butterfly butterfly = new Butterfly();
+		
+		// 1. Can you model a butterfly?
+		// a. A butterfly can fly
+		// b. A butterfly does not make a sound
+		butterfly.setFlyable(new FlyAction());
+		butterfly.setWalkble(new NoWalkAction());
+		butterfly.fly();
+		butterfly.walk(); // No Walk
+
+		// Change their behavior over time
+		// a. A caterpillar cannot fly
+		// b. A caterpillar can walk (crawl)
+		System.out.println("--------- Caterpillar ---------");
+		butterfly.setFlyable(new NoFlyAction());
+		butterfly.setWalkble(new WalkAction());
+		butterfly.fly(); // No fly
+		butterfly.walk();
 	}
 
 }
